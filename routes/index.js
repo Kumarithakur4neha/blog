@@ -1,19 +1,15 @@
-var express = require('express');
-var router = express.Router();
+// routes/index.js
+const express = require('express');
+const router = express.Router();
+const { Homepage, indexprofile, Loginpage, Registerpage } = require('../controllers/indexcontroller');
+const { isloggedin } = require('../utils/middleware');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', Homepage);
 
-router.get("/register",function(req,res,next){
-  res.render("register")
-})
+router.get('/register', Registerpage);
 
-router.get("/login",function(req,res,next){
-  res.render("login")
-})
+router.get('/login', Loginpage);
 
-
+router.get('/profile', isloggedin, indexprofile);
 
 module.exports = router;

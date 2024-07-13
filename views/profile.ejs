@@ -1,0 +1,23 @@
+<%- include('partial/header') %>
+<%- include('partial/nav') %>
+
+<div class="container mx-auto px-4 py-6">
+  <h1 class="text-3xl font-bold text-center my-6">Profile</h1>
+
+  <div class="flex flex-col items-center md:flex-row md:space-x-6">
+    <div class="w-28 h-28 bg-blue-700 mt-8 rounded-full border-4 border-slate-50 object-cover overflow-hidden">
+      <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1579463148228-138296ac3b98?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fG1vZGVsc3xlbnwwfHwwfHx8MA%3D%3D" alt="User Profile Picture">
+    </div>
+
+    <div class="mt-4 text-center md:text-left">
+      <span class="block text-2xl font-semibold text-gray-800"><%= user.fullname %></span>
+      <p class="text-gray-600"><%= user.email %></p>
+    </div>
+  </div>
+
+  <div class="mt-6 flex justify-center">
+    <a class="bg-blue-700 px-4 py-2 text-slate-50 rounded-md hover:scale-110 transition-transform duration-300 hover:bg-blue-500" href="/users/logout">Logout</a>
+  </div>
+</div>
+
+<%- include('partial/footer') %>
